@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { register } from '../actions/userActions';
+import { GoogleLogin } from '@react-oauth/google';
+import { register, googleLogin } from '../actions/userActions';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -110,12 +111,31 @@ const Register = () => {
           </div>
         </form>
 
+        <div className="mt-6">
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+              <div className="w-full border-t border-gray-300"></div>
+            </div>
+            <div className="relative flex justify-center text-sm font-medium leading-6">
+              <span className="bg-white px-4 text-gray-500">Or continue with</span>
+            </div>
+          </div>
+
+          <div className="mt-6 flex justify-center">
+            <GoogleLogin
+              onSuccess={(response) => dispatch(googleLogin(response.credential))}
+              onError={() => console.log('Google Login Failed')}
+            />
+          </div>
+        </div>
+
         <p className="mt-10 text-center text-sm text-gray-500">
           Already have an account?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'} className="font-semibold leading-6 text-gray-900 hover:text-gray-700">
             Sign in
           </Link>
         </p>
+
       </div>
     </div>
   );

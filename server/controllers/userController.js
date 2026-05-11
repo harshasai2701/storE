@@ -1,5 +1,8 @@
 import User from '../models/UserModel.js';
 import generateToken from '../utils/generateToken.js';
+import { OAuth2Client } from 'google-auth-library';
+
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // @desc    Auth user & get token
 // @route   POST /api/users/login
@@ -17,6 +20,42 @@ export const authUser = async (req, res) => {
     });
   } else {
     res.status(401).json({ message: 'Invalid email or password' });
+  }
+};
+
+// @desc    Auth user with Google
+// @route   POST /api/users/google
+export const googleLogin = async (req, res) => {
+  const { credential } = req.body;
+
+  try {
+    const ticket = await client.verifyIdToken({
+      idToken: credential,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const { name, email } = ticket.getPayload();
+
+    let user = await User.findOne({ email });
+
+    if (!user) {
+      // Create a new user if it doesn't exist
+      user = await User.create({
+        name,
+        email,
+        password: Math.random().toString(36).slice(-8), // Temporary random password
+      });
+    }
+
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(res, user._id),
+    });
+  } catch (error) {
+    res.status(401).json({ message: 'Google login failed' });
   }
 };
 
@@ -73,3 +112,4 @@ export const getAllUsers = async (req, res) => {
   const users = await User.find({}).select('-password');
   res.json(users);
 };
+
