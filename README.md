@@ -2,7 +2,7 @@
 
 A full-featured, multi-vendor e-commerce application built with the MERN stack (MongoDB, Express, React, Node.js). This platform features a modern responsive UI, secure authentication, and a robust administrative dashboard for managing products, orders, and users.
 
-## 🚀 Features
+##  Features
 
 ### Customer Features
 - **User Authentication:** Secure registration and login using JWT and bcrypt password hashing.
@@ -20,7 +20,7 @@ A full-featured, multi-vendor e-commerce application built with the MERN stack (
 - **User Management:** View all registered users and manage administrative privileges.
 - **Secure Access:** Protected routes and middleware ensuring only admins can access sensitive dashboard features.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend:** React (Vite), Redux Toolkit (State Management), Tailwind CSS, Lucide React (Icons).
 - **Backend:** Node.js, Express.
@@ -28,7 +28,7 @@ A full-featured, multi-vendor e-commerce application built with the MERN stack (
 - **Authentication:** JSON Web Tokens (JWT).
 - **File Upload:** Multer.
 
-## 📦 Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - Node.js installed
@@ -70,7 +70,7 @@ cd client
 npm run dev
 ```
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 MernShop/
@@ -92,7 +92,7 @@ MernShop/
 └── .gitignore          # Root ignore file
 ```
 
-## 📜 Scripts
+##  Scripts
 - **Seed Data:** Run `node seeder.js` in the `server` folder to populate the database with sample products and users.
 - **Create Admin:** Run `node createAdmin.js` to create a default admin user.
 
