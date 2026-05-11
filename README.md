@@ -97,5 +97,3 @@ MernShop/
 - **Create Admin:** Run `node createAdmin.js` to create a default admin user.
 
 ---
-
-Built with ❤️ by [harshasai2701](https://github.com/harshasai2701)
