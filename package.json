@@ -6,8 +6,13 @@
   "scripts": {
     "dev:server": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "npm run build --prefix client",
+    "gcp-build": "npm run build:client",
+    "install-all": "npm install --prefix client && npm install --prefix server",
+    "start": "node server/server.js"
   },
+
   "dependencies": {
     "concurrently": "^8.2.2"
   }

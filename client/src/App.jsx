@@ -18,7 +18,8 @@ import ProductEdit from './pages/ProductEdit';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-white dark:bg-zinc-950 transition-colors duration-300">
+
         <Header />
         <main className="flex-grow">
           <Routes>

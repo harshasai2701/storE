@@ -5,9 +5,36 @@
   --color-brand-900: #18181b;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #ffffff;
-  color: var(--color-brand-900);
+/* Bulletproof Theme Variables */
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #09090b;
+  --border-primary: #e5e7eb;
+}
+
+html.dark {
+  --bg-primary: #09090b;
+  --text-primary: #fafafa;
+  --border-primary: #27272a;
+}
+
+@layer base {
+  html, body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Override Tailwind classes to use our bulletproof variables */
+  .bg-white, .dark\:bg-zinc-950 {
+    background-color: var(--bg-primary) !important;
+  }
+
+  .text-gray-900, .dark\:text-white, .text-zinc-900, .dark\:text-zinc-50 {
+    color: var(--text-primary) !important;
+  }
+  
+  .border-gray-200, .dark\:border-zinc-800 {
+    border-color: var(--border-primary) !important;
+  }
 }
