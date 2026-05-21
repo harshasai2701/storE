@@ -13,9 +13,9 @@ const Hero = () => {
               <h1 className="text-sm font-semibold tracking-wide text-indigo-600 dark:text-indigo-400 uppercase mb-3">
                 storE Premium
               </h1>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight transition-colors">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 dark:text-white leading-tight transition-colors">
                 Premium Products for <br />
-                <span className="text-indigo-600 dark:text-indigo-400">Your Lifestyle</span>
+                <span className="text-indigo-800 dark:text-indigo-400 font-bold">Your Lifestyle</span>
               </h2>
               <p className="mt-6 text-lg text-gray-600 dark:text-zinc-400 max-w-xl transition-colors">
                 Discover the latest in tech, fashion, and home essentials. Quality products, curated just for you, with the fastest delivery in town.

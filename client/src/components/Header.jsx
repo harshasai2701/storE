@@ -40,7 +40,7 @@ const Header = () => {
             <ThemeToggle />
             
             {/* Cart with item count badge */}
-            <Link to="/cart" className="relative flex items-center gap-1 text-sm font-semibold text-gray-700 dark:text-zinc-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+            <Link to="/cart" className="relative flex items-center gap-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
               <ShoppingBag className="w-5 h-5" />
               <span className="hidden sm:inline">Cart</span>
 
@@ -96,7 +96,7 @@ const Header = () => {
                 )}
 
                 {/* Profile link */}
-                <Link to="/profile" className="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-zinc-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link to="/profile" className="flex items-center gap-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   <User className="w-5 h-5" />
                   <span className="hidden sm:inline">{userInfo.name.split(' ')[0]}</span>
                 </Link>
@@ -110,7 +110,7 @@ const Header = () => {
                 </button>
               </div>
             ) : (
-              <Link to="/login" className="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-zinc-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <Link to="/login" className="flex items-center gap-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 <User className="w-5 h-5" />
                 <span>Login</span>
               </Link>
