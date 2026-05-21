@@ -8,7 +8,7 @@
     "dev:client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "build:client": "npm run build --prefix client",
-    "gcp-build": "npm install --prefix client && npm run build:client",
+    "gcp-build": "npm install --include=dev --prefix client && npm run build:client",
     "install-all": "npm install --prefix client && npm install --prefix server",
     "start": "node server/server.js"
   },
